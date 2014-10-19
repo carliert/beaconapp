@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.wearable.view.BoxInsetLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+    <android.support.wearable.view.DelayedConfirmationView
+        android:id="@+id/delayed_confirmation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/managercall"
+        app:circle_color="@color/white"
+        app:circle_radius="@dimen/circle_cm_radius"
+        app:circle_radius_pressed="@dimen/circle_radius_pressed"
+        app:circle_padding="@dimen/circle_padding"
+        app:circle_border_width="@dimen/circle_border_normal_width"
+        app:circle_border_color="@color/blue"/>
+
+    <TextView
+        android:id="@+id/textOri"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textSize="20dp"
+        android:layout_marginTop="40px"
+        android:text="Appel ..." />
+</android.support.wearable.view.BoxInsetLayout>
