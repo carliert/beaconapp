@@ -11,6 +11,7 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.AsyncTask;
+import android.os.Handler;
 import android.util.Log;
 
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -23,6 +24,7 @@ import com.google.android.gms.wearable.WearableListenerService;
 
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.TimerTask;
 
 public class DataLayerListenerService extends WearableListenerService implements SensorEventListener {
     public static boolean detectPlate;
@@ -72,7 +74,16 @@ public class DataLayerListenerService extends WearableListenerService implements
                 NotificationCenter.showEnterRegionNotification(this,BEACON3);
             }
             currentRegion = beacon_num;
-            detectPlate = true;
+
+            Handler handler=new Handler();
+            Runnable r=new Runnable()
+            {
+                public void run()
+                {
+                    detectPlate = true;
+                }
+            };
+            handler.postDelayed(r, 5000);
             this.startSensor();
 
         } else if (messageEvent.getPath().startsWith(BEACON_QUIT_MESSAGE)) {
@@ -183,5 +194,6 @@ public class DataLayerListenerService extends WearableListenerService implements
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
 
     }
+
 
 }

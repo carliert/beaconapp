@@ -22,17 +22,11 @@ public class NotificationCenter {
     private static Notification.Builder buildBasicNotification(Context context,String title,String text, int region) {
         int notificationId = 001;
         // Build intent for notification content
-        Intent call_intent = new Intent(context,CallManager.class);
-        call_intent.setAction(MainActivity.CALL_MANAGER_ACTION);
-        PendingIntent viewPendingIntent =
-                PendingIntent.getActivity(context, 0, call_intent, 0);
 
         Notification.Builder builder =new Notification.Builder(context)
                 .setSmallIcon(R.drawable.ic_launcher)
                 .setContentTitle(title)
                 .setContentText(text)
-                .addAction(R.drawable.managercall,
-                        "Appeler un vendeur", viewPendingIntent)
                 .setVibrate(new long[]{0, 1000, 50, 2000});
         builder.setDefaults(Notification.DEFAULT_ALL);
         int resource_id = R.drawable.caisse;
@@ -58,7 +52,7 @@ public class NotificationCenter {
 
          Notification.Builder builder = buildBasicNotification(context,title,text,region);
        // builder.setGroup(regions[region-1]);
-        ((NotificationManager) context.getSystemService(context.NOTIFICATION_SERVICE)).notify(LIKE_NOTIFICATION, builder.build());
+        ((NotificationManager) context.getSystemService(context.NOTIFICATION_SERVICE)).notify(1, builder.build());
 
         return 1;
     }
@@ -68,8 +62,17 @@ public class NotificationCenter {
         String text = texts[region-1];
 
         Notification.Builder builder = buildBasicNotification(context,title,text,region);
+        Intent call_intent = new Intent(context,CallManager.class);
+        call_intent.setAction(MainActivity.CALL_MANAGER_ACTION);
+        PendingIntent viewPendingIntent =
+                PendingIntent.getActivity(context, 0, call_intent, 0);
+
+
+
+        builder.addAction(R.drawable.managercall,
+                "Appeler un vendeur", viewPendingIntent);
        // builder.setGroup(regions[region-1]);
-        ((NotificationManager) context.getSystemService(context.NOTIFICATION_SERVICE)).notify(ENTER_REGION_NOTIFICATION, builder.build());
+        ((NotificationManager) context.getSystemService(context.NOTIFICATION_SERVICE)).notify(1, builder.build());
         return 0;
     }
 
@@ -79,7 +82,7 @@ public class NotificationCenter {
 
         Notification.Builder builder = buildBasicNotification(context,title,text,region);
         //builder.setGroup(regions[region-1]);
-        ((NotificationManager) context.getSystemService(context.NOTIFICATION_SERVICE)).notify(QUIT_REGION_NOTIFICATION, builder.build());
+        ((NotificationManager) context.getSystemService(context.NOTIFICATION_SERVICE)).notify(1, builder.build());
         return 0;
     }
 

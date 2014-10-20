@@ -52,6 +52,8 @@ import org.json.JSONObject;
 
 public class MainActivity extends Activity implements MessageApi.MessageListener, NodeApi.NodeListener, ConnectionCallbacks,
         OnConnectionFailedListener, BeaconConsumer {
+   private static final String SERVER_URL = "http://192.168.1.107:8000/";
+
     private static final int mNetworkRequestLocation = 1;
     private static final int mNetworkRequestLike = 2;
     private static final int mNetworkRequestCall = 3;
@@ -327,13 +329,13 @@ public class MainActivity extends Activity implements MessageApi.MessageListener
                     int index = 0;
                     if(firstBeacon.getId3().toInt() == 62208){ //rssi Hallalerie (00221)
                         index = 2;
-                        tvBeacon3.setText("Beacon 3 (Hallalerie) : "+dist);
+                        //tvBeacon3.setText("Beacon 3 (Hallalerie) : "+dist);
                     }else if (firstBeacon.getId3().toInt() == 50432){   //rssi Boucherie  (00284)
                         index = 1;
-                        tvBeacon2.setText("Beacon 2 (Boucherie) : "+dist);
+                        //tvBeacon2.setText("Beacon 2 (Boucherie) : "+dist);
                     }else if (firstBeacon.getId3().toInt() == 11008){   //rssi Boulangerie (00234)
                         index = 0;
-                        tvBeacon1.setText("Beacon 1 (Boulangerie) : "+dist);
+                        //tvBeacon1.setText("Beacon 1 (Boulangerie) : "+dist);
 
                     }
                     distances.set( index, dist);
@@ -409,7 +411,7 @@ public class MainActivity extends Activity implements MessageApi.MessageListener
             try {
 
 
-                String url  = "h";
+                String url  = SERVER_URL;
 
                 String json = "";
 
