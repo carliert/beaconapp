@@ -3,6 +3,7 @@ package beacon.critizr.com.beaconapp;
 import android.app.Activity;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Context;
 import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -10,6 +11,7 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.support.wearable.activity.ConfirmationActivity;
 import android.support.wearable.view.CardFragment;
 import android.support.wearable.view.DelayedConfirmationView;
@@ -120,7 +122,13 @@ public class MainActivity extends Activity implements
                     //Log.d(TAG, "Sensor DisLike");
                     if (!hasLiked) {
                         mDelayedView.setImageResource(R.drawable.dislike);
+                        mDelayedView.setTotalTimeMs(600);
+                        mDelayedView.start();
                         new SendMessageActivityTask().execute(DISLIKE_MESSAGE);
+
+                        final Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                        long[] pattern = { 0, 1000 };
+                        v.vibrate( pattern, -1 );
                     }
                     hasLiked = true;
                 } else if (roll > 70) {
@@ -129,7 +137,14 @@ public class MainActivity extends Activity implements
                     //NotificationCenter.showLikeNotification(this,true,DataLayerListenerService.currentRegion);
                     if (!hasLiked) {
                         mDelayedView.setImageResource(R.drawable.like);
+                        mDelayedView.setTotalTimeMs(600);
+                        mDelayedView.start();
+
                         new SendMessageActivityTask().execute(LIKE_MESSAGE);
+
+                        final Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                        long[] pattern = { 0, 5000 };
+                        v.vibrate( pattern, -1 );
                     }
                     hasLiked = true;
                 }
