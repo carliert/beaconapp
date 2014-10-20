@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pre-dex-items>
+
+    <item
+        dex="/Users/souadalia/Critizr/vad/beaconapp/mobile/build/intermediates/pre-dexed/debug/classes-c0e81983ba2ee2331a173b7b025a841925034796.jar"
+        jar="/Users/souadalia/Critizr/vad/beaconapp/mobile/build/intermediates/exploded-aar/com.android.support/support-v4/20.0.0/classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="8694693636ab36910c8100ce527c258ff3ebece0"/>
+    <item
+        dex="/Users/souadalia/Critizr/vad/beaconapp/mobile/build/intermediates/pre-dexed/debug/classes-85ac60f1f3b2c32b301e1ef65b23827ebe5fb4c8.jar"
+        jar="/Users/souadalia/Critizr/vad/beaconapp/mobile/build/intermediates/exploded-aar/org.altbeacon/android-beacon-library/2.0/classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="df28ff15017707162b508f2bc96637dd57f3ed72"/>
+    <item
+        dex="/Users/souadalia/Critizr/vad/beaconapp/mobile/build/intermediates/pre-dexed/debug/classes-5d87af900ee624c11699e6d501d518d5af027c86.jar"
+        jar="/Users/souadalia/Critizr/vad/beaconapp/mobile/build/intermediates/exploded-aar/com.google.android.gms/play-services-wearable/6.1.11/classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="711351f12980fffdff7f1b0be9303ac6611affd8"/>
+    <item
+        dex="/Users/souadalia/Critizr/vad/beaconapp/mobile/build/intermediates/pre-dexed/debug/support-annotations-20.0.0-bca9cd8c8082330ef7549e0398af852faae531fd.jar"
+        jar="/Applications/Android Studio.app/sdk/extras/android/m2repository/com/android/support/support-annotations/20.0.0/support-annotations-20.0.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="9d9013e9ff35fc3756411e62873c363c70c638fa"/>
+    <item
+        dex="/Users/souadalia/Critizr/vad/beaconapp/mobile/build/intermediates/pre-dexed/debug/internal_impl-20.0.0-a50d64a0a55b313e487e7bb3e9720b3e488d4f9b.jar"
+        jar="/Users/souadalia/Critizr/vad/beaconapp/mobile/build/intermediates/exploded-aar/com.android.support/support-v4/20.0.0/libs/internal_impl-20.0.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="e40b3078e3fbd353c9f44da8df25a8fc0078209d"/>
+
+</pre-dex-items>
